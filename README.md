@@ -15,7 +15,7 @@ where:
 -H -- is the host:port of the other instance to connect to, ie: localhost:12345;
 -m -- message to be sent to the other instance, ie: "Alice has a cat";
 ```
-* Pair with the other instance knowing `host:port` -- for the sake of simplicity, you can use HTTP protocol here; In order to pair, use `GET /pair` endpoint, which will return the authentication token for any further request to be made;
+* Pair with the other instance knowing `host:port` -- for the sake of simplicity, you can use HTTP protocol here; In order to pair, use `GET /pair` endpoint, which will return the authentication token for any further request to be made; `GET /pair` endpoint generates the authentication token each time it is being hit and saves all the tokens in a JSON, which is stored locally in a file called `tokens.json` (create one if it doesn't exist yet).
 * Prepare the `Event` structure:
 ```
 struct Event {
@@ -27,7 +27,10 @@ struct Message {
 }
 ```
 which will be sent to the other instance.
-* Use `POST /messages` endpoint to send the message to the other instance and use JSON format to serialize the data;
+* `POST /messages` endpoint should:
+  * send the message along with authentication token (in order to be authenticated) to the other instance and use JSON format to serialize the data;
+  * authenticate first the incoming request and if authenticated, it continue (returns 401 otherwise);
+  * deserialize the payload (serialized event), print the received `msg` to `STDOUT` and stores it in a file calles `messages.json`;
 * Spawn a new Cargo pkg and setup Github repository, where you'll upload the result of your work;
 * Provide README.md with essential info how to run/build/test it with some examples.
 
