@@ -8,7 +8,7 @@ Requirements:
 
 * Implement a Program which is able to run from command line and will support such options:
 ```
-./program_name -H host:port -m human_readable_message_to_send_to_the_other_instance -t auth_token
+./program_name -H host:port -m human_readable_message_to_send_to_the_other_instance
 ```
 where:
 ```
