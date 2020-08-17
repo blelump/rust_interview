@@ -29,7 +29,7 @@ struct Message {
 which will be sent to the other instance.
 * Use `POST /messages` endpoint to send the message to the other instance and use JSON format to serialize the data;
 * Spawn a new Cargo pkg and setup Github repository, where you'll upload the result of your work;
-* Provide README.md with essential info how to run it with some examples.
+* Provide README.md with essential info how to run/build/test it with some examples.
 
 ### Caveats
 
@@ -46,6 +46,14 @@ Don't be neither too generic nor too specific – don't polish it too much, but 
 Your work should be available via GitHub as a public repository, commit often[1].
 
 Value quality over quantity. And, finally, when in doubt – especially about the scope of the task – feel free to ask.
+
+### Bonus points
+
+You would outperform competition if you would:
+- use [keriox](https://github.com/jolocom/keriox) lib for using events instead of using mock structure
+- add support for multiple transport protocols
+- describe how to solve asyn vs sync communication
+- leverage [keriox](https://github.com/jolocom/keriox) derivation path for unique identifier
 
 
 \[1\]: Get familiar with SRP principle (if you don't know it yet) and apply it to commits. Get familiar with this https://chris.beams.io/posts/git-commit/ . 
