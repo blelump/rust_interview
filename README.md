@@ -30,7 +30,7 @@ which will be sent to the other instance.
 * `POST /messages` endpoint should:
   * send the message along with authentication token (in order to be authenticated) to the other instance and use JSON format to serialize the data;
   * authenticate first the incoming request (by loading the `tokens.json` and checking whether it contains provided token); it continues if authenticated and returns 401 otherwise;
-  * deserialize the payload (serialized event), print the received `msg` to `STDOUT` and stores it in a file calles `messages.json`;
+  * deserialize the payload (serialized event), print the received `msg` to `STDOUT` and store it in a file called `messages.json`;
 * Spawn a new Cargo pkg and setup Github repository, where you'll upload the result of your work;
 * Provide README.md with essential info how to run/build/test it with some examples.
 
@@ -55,7 +55,7 @@ Value quality over quantity. And, finally, when in doubt – especially about th
 You would outperform competition if you would:
 - use [keriox](https://github.com/jolocom/keriox) lib for using events instead of using mock structure
 - add support for multiple transport protocols
-- describe how to solve asyn vs sync communication
+- describe how to solve async vs sync communication
 - leverage [keriox](https://github.com/jolocom/keriox) derivation path for unique identifier
 
 
