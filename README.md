@@ -29,7 +29,7 @@ struct Message {
 which will be sent to the other instance.
 * `POST /messages` endpoint should:
   * send the message along with authentication token (in order to be authenticated) to the other instance and use JSON format to serialize the data;
-  * authenticate first the incoming request and if authenticated, it continue (returns 401 otherwise);
+  * authenticate first the incoming request (by loading the `tokens.json` and checking whether it contains provided token); it continues if authenticated and returns 401 otherwise;
   * deserialize the payload (serialized event), print the received `msg` to `STDOUT` and stores it in a file calles `messages.json`;
 * Spawn a new Cargo pkg and setup Github repository, where you'll upload the result of your work;
 * Provide README.md with essential info how to run/build/test it with some examples.
